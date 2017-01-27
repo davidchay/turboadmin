@@ -11,7 +11,7 @@
 
 <body>
     <div id="app">
-        <form v-on:submit="signUp(true)">
+        <form v-on:submit.prevent="signUp(true)">
             <div v-show="name">
                 <h1>{{gener == 'm'? 'Bienvenido' : 'Bienvenida' }}, {{name}}</h1>
                 <p>Espero disfrutes tu visita</p>
@@ -25,6 +25,7 @@
             <p v-else>Exelente</p>
             <input type="radio" name="genero" v-model="gener" value="m"> Male<br>
             <input type="radio" name="gener0" v-model="gener" value="f"> Female<br>
+            <p>Años de experiencia e PHP {{expphp}} <button v-on:click.prevent="chkphp(1) ">+</button> <button v-on:click.prevent="chkphp(-1)">-</button></p>
             <p>
                 <button type="submit">Enviar</button>
                 <button type="submit" v-on:click.prevent="signUp(false)">enviar y Salir del sistema</button>
@@ -39,7 +40,8 @@
         el: "#app",
         data: {
             name: "",
-            gener: 'm'
+            gener: 'm',
+            expphp: 0
         },
         methods: {
             signUp: function(r) {
@@ -50,6 +52,15 @@
                     alert('Bye');
                 }
             },
+            chkphp: function(val) {
+                console.log(val);
+                this.expphp = this.expphp + val;
+                if (this.expphp < 0) {
+                    this.expphp = 0;
+                    return;
+                }
+                console.log(this.expphp);
+            }
         }
     });
 </script>
