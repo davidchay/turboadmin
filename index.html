@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form v-on:submit="signUp(true)">
+            <div v-show="name">
+                <h1>{{gener == 'm'? 'Bienvenido' : 'Bienvenida' }}, {{name}}</h1>
+                <p>Espero disfrutes tu visita</p>
+                <p>Tu nombre al reves: {{ name.split('').reverse().join('') }}</p>
+            </div>
+            <br>
+            <input type="text" v-model="name" name="nombre">
+            <p class="alert" v-if="!name">
+                Campo obligatorio
+            </p>
+            <p v-else>Exelente</p>
+            <input type="radio" name="genero" v-model="gener" value="m"> Male<br>
+            <input type="radio" name="gener0" v-model="gener" value="f"> Female<br>
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="submit" v-on:click.prevent="signUp(false)">enviar y Salir del sistema</button>
+            </p>
+        </form>
+        <br>
+        <pre>{{ $data }}</pre>
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+            name: "",
+            gener: 'm'
+        },
+        methods: {
+            signUp: function(r) {
+                console.log('Entra a singUp');
+                if (r) {
+                    alert('Welcome');
+                } else {
+                    alert('Bye');
+                }
+            },
+        }
+    });
+</script>
+
+</html>
