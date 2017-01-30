@@ -215,8 +215,8 @@ body {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #292b2c;
-  background-color: #fff; }
+  color: #7f8c8d;
+  background-color: #434857; }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -261,10 +261,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #0275d8;
+  color: #3498db;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #014c8c;
+    color: #1d6fa5;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -309,7 +309,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #636c72;
+  color: #ecf0f1;
   text-align: left;
   caption-side: bottom; }
 

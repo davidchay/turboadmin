@@ -92,21 +92,34 @@
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
-$teal:   #5bc0de !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+//$white:  #fff !default;
+$white:  #E5E5E5 !default;
+//$black:  #000 !default;
+$black:   #434857 !default;
+//$red:    #d9534f !default;
+$red:    #e74c3c !default;
+//$orange: #f0ad4e !default;
+$orange: #e67e22 !default;
+//$yellow: #ffd500 !default;
+$yellow: #f1c40f !default;
+//$green:  #5cb85c !default;
+$green:  #2ecc71 !default;
+//$blue:   #0275d8 !default;
+$blue:   #3498db !default;
+//$teal:   #5bc0de !default;
+$teal:   #1abc9c !default;
+//$pink:   #ff5b77 !default;
+$pink:   #DB0A5B !default;
+//$purple: #613d7c !default;
+$purple: #9b59b6 !default;
 
 // Create grayscale
-$gray-dark:                 #292b2c !default;
-$gray:                      #464a4c !default;
-$gray-light:                #636c72 !default;
+//$gray-dark:                 #292b2c !default;
+$gray-dark:                 #7f8c8d !default;
+//$gray:                      #464a4c !default;
+$gray:                      #bdc3c7 !default;
+//$gray-light:                #636c72 !default;
+$gray-light:                #ecf0f1 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
@@ -181,7 +194,8 @@ $sizes: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
+//$body-bg:       $white !default;
+$body-bg:       $black !default;
 $body-color:    $gray-dark !default;
 $inverse-bg:    $gray-dark !default;
 $inverse-color: $gray-lighter !default;
@@ -619,12 +633,12 @@ $navbar-inverse-disabled-color:        rgba($white,.25) !default;
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
 $navbar-inverse-toggler-border:        rgba($white,.1) !default;
 
-$navbar-light-color:                rgba($black,.5) !default;
-$navbar-light-hover-color:          rgba($black,.7) !default;
-$navbar-light-active-color:         rgba($black,.9) !default;
-$navbar-light-disabled-color:       rgba($black,.3) !default;
+$navbar-light-color:                rgba($gray-lighter,.5) !default;
+$navbar-light-hover-color:          rgba($gray-lighter,.7) !default;
+$navbar-light-active-color:         rgba($gray-lighter,.9) !default;
+$navbar-light-disabled-color:       rgba($gray-lighter,.3) !default;
 $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border:       rgba($black,.1) !default;
+$navbar-light-toggler-border:       rgba($gray-lighter,.1) !default;
 
 // Navs
 

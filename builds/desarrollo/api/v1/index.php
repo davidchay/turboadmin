@@ -9,4 +9,8 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
     return $response;
 });
 
+$app->get('/',function(){
+  require_once('views/index.php');
+});
+
 $app->run();
