@@ -1,0 +1,26 @@
+{
+  "name": "turboadmin",
+  "version": "0.0.1",
+  "description": "aplicacion tipo CRUD con PHP MONGODB SLIMFRAMEWORK VUEJS BOOTSTRAP ",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidchay/turboadmin.git"
+  },
+  "author": "davidchay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidchay/turboadmin/issues"
+  },
+  "homepage": "https://github.com/davidchay/turboadmin#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8"
+  }
+}

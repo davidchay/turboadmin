@@ -1,0 +1,147 @@
+
+#header-container
+{
+  background-color:#3C414E;
+
+  #brandy
+  {
+    font-size: 1.5em;
+    margin:0;
+    padding: 0;
+    line-height: normal;
+    background-color: red;
+  }
+  #menu-principal
+  {
+    &.navbar
+    {
+      padding-left: 0;
+      padding-right: 0;
+      .nav
+      {
+        .nav-item
+        {
+          &.active
+          {
+            position:relative;
+            &:after
+            {
+                content:"";
+                display:block;
+                border-bottom:7px solid #3498DB;
+                border-left:7px solid transparent;
+                border-right:7px solid transparent;
+                border-top:none;
+                width: 10px;
+                margin:0 auto;
+                left:50% - 5;
+                bottom: -18px;
+                position:absolute;
+                z-index: 100;
+                @include media-breakpoint-down(sm) {
+                  bottom: -10px;
+                }
+            }
+            a
+            {
+              color:white;
+              &:hover
+              {
+                color:white;
+              }
+            }
+          }
+          a
+          {
+            color:#bdc3c7;
+            &:hover
+            {
+              color:#eceeef;
+            }
+          }
+        }
+      }
+    }
+  }
+  #menu-secundario
+  {
+    &.navbar
+    {
+      padding-top:0.2rem;
+      padding-bottom: 0.2rem;
+      .nav-item
+      {
+        &.active
+        {
+          position:relative;
+          &:after
+          {
+              content:"";
+              display:block;
+              border-bottom:7px solid $black;
+              border-left:7px solid transparent;
+              border-right:7px solid transparent;
+              border-top:none;
+              width: 10px;
+              margin:0 auto;
+              left:50% - 5;
+              bottom: -4px;
+              position:absolute;
+              z-index: 100;
+              @include media-breakpoint-down(sm) {
+                bottom: -3px;
+              }
+              @include media-breakpoint-down(xs) {
+                display:none;
+              }
+          }
+          a
+          {
+            color:white;
+            &:hover
+            {
+              color:white;
+            }
+          }
+        }
+      }
+      .nav-link
+      {
+        color:lightgray;
+        &:hover
+        {
+          color:white;
+        }
+      }
+      .navbar-collapse
+      {
+        form
+        {
+          input[type="text"]
+          {
+            background-color: rgba($black, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+}
+.table
+{
+  border:1px solid $white;
+  th
+  {
+      color:white;
+  }
+  tr
+  {
+    background: $black;
+    //color:red;
+  }
+  &.table-hover
+  {
+    background-color: #1e2b38;
+    //color:$black;
+  }
+}
