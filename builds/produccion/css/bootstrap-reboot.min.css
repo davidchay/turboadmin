@@ -215,8 +215,13 @@ body {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
+<<<<<<< HEAD
   color: #d4d8dc;
   background-color: #2c3e50; }
+=======
+  color: #7f8c8d;
+  background-color: #434857; }
+>>>>>>> 95b51cdb201c431df8097193605bfa70a837ec74
 
 [tabindex="-1"]:focus {
   outline: none !important; }
