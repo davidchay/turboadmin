@@ -1,8 +1,9 @@
-
+.btn:hover
+{
+  cursor:pointer;
+}
 #header-container
 {
-  background-color:#3C414E;
-
   #brandy
   {
     font-size: 1.5em;
@@ -44,19 +45,21 @@
             }
             a
             {
-              color:white;
+              color:$brand-primary;
               &:hover
               {
-                color:white;
+                color:$brand-primary;
+                cursor: default;
               }
             }
           }
           a
           {
-            color:#bdc3c7;
+            color:$gray-dark;
+            font-weight: 500;
             &:hover
             {
-              color:#eceeef;
+              color:$brand-primary;
             }
           }
         }
@@ -69,8 +72,10 @@
     {
       padding-top:0.2rem;
       padding-bottom: 0.2rem;
+
       .nav-item
       {
+
         &.active
         {
           position:relative;
@@ -78,7 +83,7 @@
           {
               content:"";
               display:block;
-              border-bottom:7px solid $black;
+              border-bottom:7px solid $body-bg;
               border-left:7px solid transparent;
               border-right:7px solid transparent;
               border-top:none;
@@ -98,6 +103,7 @@
           a
           {
             color:white;
+            font-weight: 500;
             &:hover
             {
               color:white;
@@ -107,7 +113,7 @@
       }
       .nav-link
       {
-        color:lightgray;
+        color:$gray-lightest;
         &:hover
         {
           color:white;
@@ -120,6 +126,10 @@
           input[type="text"]
           {
             background-color: rgba($black, 0.2);
+            color:$white;
+            &::placeholder{
+              color:$gray-light;
+            }
           }
         }
       }
@@ -129,19 +139,19 @@
 }
 .table
 {
-  border:1px solid $white;
+  //border:1px solid $white;
   th
   {
-      color:white;
+      //color:white;
   }
   tr
   {
-    background: $black;
+    //background: $black;
     //color:red;
   }
   &.table-hover
   {
-    background-color: #1e2b38;
+    //background-color: #1e2b38;
     //color:$black;
   }
 }

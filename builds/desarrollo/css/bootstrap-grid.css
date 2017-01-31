@@ -96,11 +96,8 @@ html {
     .row {
       margin-right: -15px;
       margin-left: -15px; } }
-<<<<<<< HEAD
   .row.top-buffer {
     margin-top: 20px; }
-=======
->>>>>>> 95b51cdb201c431df8097193605bfa70a837ec74
 
 .no-gutters {
   margin-right: 0;
