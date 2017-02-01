@@ -95,7 +95,7 @@ $enable-rounded:            false;
 // Settings for the `<body>` element.
 
 //$body-bg:       $white !default;
-$body-bg:       $gray-light;
+$body-bg:       $black;//$gray-light;
 $body-color:    $gray-dark;
 $inverse-bg:    $black;
 $inverse-color: $gray-lighter;
@@ -141,7 +141,7 @@ $blockquote-border-color: darken($gray-light,15%);
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 
-$table-bg:                      $white;
+$table-bg:                      $gray-light;//$white;
 
 $table-inverse-bg:              $black;
 $table-inverse-color:           $white;

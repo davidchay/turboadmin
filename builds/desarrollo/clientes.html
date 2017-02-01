@@ -13,6 +13,8 @@
     <!-- icon fonts -->
     <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="css/helper.css">
+    <!-- sweed alert 2 -->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 </head>
 
 <body>
@@ -86,7 +88,8 @@
         </nav>
 
     </header>
-    <div class="container">
+    <!-- ./Header -->
+    <div id="app" class="container">
         <div class="row top-buffer">
             <h1 class="display-4">Clientes</h1>
             <table class="table table-hover ">
@@ -100,33 +103,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                    <tr v-for="(cliente, index=20) in clientes">
+                        <th scope="row">{{index+1}}</th>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td>{{cliente.username}}</td>
                         <td>
                             <button type="button" class="btn btn-success " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-edit"></span></button>
-                            <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash"></span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>
-                            <button type="button" class="btn btn-success " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-edit"></span></button>
-                            <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash"></span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>
-                            <button type="button" class="btn btn-success " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-edit"></span></button>
-                            <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash"></span></button>
+                            <button type="button" v-on:click.prevent="rm(cliente)" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash"></span></button>
                         </td>
                     </tr>
                 </tbody>
@@ -151,12 +135,21 @@
             </div>
         </div>
     </div>
-    <!-- ./Header -->
+
+
+    <!-- Button trigger modal -->
+    <button id="sweedalert2" type="button" class="btn btn-primary">
+      Launch demo modal
+    </button>
+
+
+
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="js/jquery.js" charset="utf-8"></script>
     <script src="js/tether.js" charset="utf-8"></script>
     <script src="js/bootstrap.js" charset="utf-8"></script>
-    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/sweetalert2.js" charset="utf-8"></script>
+    <script src="js/vue.min.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
 </body>
 
