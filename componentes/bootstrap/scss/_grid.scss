@@ -29,6 +29,7 @@
     @include make-row();
 
     &.top-buffer { margin-top:20px; }
+    &.bottom-buffer { margin-bottom:20px; }
   }
 
   // Remove the negative margin from default .row, then the horizontal padding

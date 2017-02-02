@@ -6,13 +6,13 @@ $(function () {
       el: '#app',
       data: {
         clientes: [
-          { nombre: 'Camila hernandez vergugo', telefono:'96212345467', username:'@camihdz' },
-          { nombre: 'Rodrigo alcazar mendez', telefono:'9626745323', username:'@rodri' },
-          { nombre: 'Victor Hugo Perez Lopez', telefono:'962787654', username:'@vicgo' },
-          { nombre: 'Sandra lopez Garcia', telefono:'96298765342', username:'@sandy' },
-          { nombre: 'Samantha Galvez Sierra', telefono:'9628976234', username:'@sammy' },
-          { nombre: 'Ulises Mendez Zarate', telefono:'9629876342', username:'@ulimendez' },
-          { nombre: 'Miguel Coronado Perez', telefono:'9627907354', username:'@migue' },
+          { nombre: 'Camila hernandez vergugo', telefono:'96212345467', colonia:'Benito juarez' },
+          { nombre: 'Rodrigo alcazar mendez', telefono:'9626745323', colonia:'Benito juarez' },
+          { nombre: 'Victor Hugo Perez Lopez', telefono:'962787654', colonia:'Benito juarez' },
+          { nombre: 'Sandra lopez Garcia', telefono:'96298765342', colonia:'Benito juarez' },
+          { nombre: 'Samantha Galvez Sierra', telefono:'9628976234', colonia:'Benito juarez' },
+          { nombre: 'Ulises Mendez Zarate', telefono:'9629876342', colonia:'Benito juarez' },
+          { nombre: 'Miguel Coronado Perez', telefono:'9627907354', colonia:'Benito juarez' },
         ]
       },
       methods: {

@@ -98,6 +98,8 @@ html {
       margin-left: -15px; } }
   .row.top-buffer {
     margin-top: 20px; }
+  .row.bottom-buffer {
+    margin-bottom: 20px; }
 
 .no-gutters {
   margin-right: 0;

@@ -71,11 +71,11 @@
                   </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="./clientes.html">Clientes <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./clientes-nuevo.html">Nuevo cliente</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nuevo cliente</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-sm-0">
@@ -90,86 +90,79 @@
     </header>
     <!-- ./Header -->
     <div id="app" class="container">
-        <section class="row top-buffer">
-            <div class="col-8">
-                <h1 class="display-4">Clientes</h1>
+        <div class="row top-buffer">
+            <div class="col-12">
+                <h1 class="display-4">Información del Cliente</h1>
             </div>
-            <div class="col-4">
-                <ul class="nav pull-right">
+
+
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tooltip" data-placement="top" title="Clientes Estrella" href="#">
-                            <i class="pe-7s-star pe-2x pe-va"></i>
-                        </a>
+                        <a class="nav-link" href="#">Servicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Falta por pagar" href="#">
-                            <i class="pe-7s-cash pe-2x pe-va"></i>
-                        </a>
+                        <a class="nav-link" href="#">Historial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Vista en tabla" href="#">
-                            <i class="pe-7s-menu pe-2x pe-va"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Vista en cards" href="#">
-                            <i class="pe-7s-id pe-2x pe-va"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="pe-7s-date pe-2x pe-va"></i>
-                            <sup>2</sup>
-                        </a>
+                        <a class="nav-link active" href="#">Detalle</a>
                     </li>
                 </ul>
-
-            </div>
-
-            <div class="col-12">
-                <table class="table table-hover ">
-                    <thead class="">
-                        <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <td>Colonia</td>
-                            <th>Telefono</th>
-                            <th width="160px">Operación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(cliente, index=20) in clientes">
-                            <th scope="row">{{index+1}}</th>
-                            <td>{{cliente.nombre}}</td>
-                            <td>{{cliente.colonia}}</td>
-                            <td>{{cliente.telefono}}</td>
-                            <td>
-                                <button type="button" class="btn btn-info " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-info pe-lg"></span></button>
-                                <button type="button" v-on:click.prevent="rm(cliente)" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash pe-lg"></span></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <!-- ./row -->
-        <div class="row">
-            <div class="col-md-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="card">
+                    <div class="card-block">
+                        <form action="">
+                            <h2 class="card-title"></h2>
+                            <p class="card-text">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control input-hidden" name="nombre" value="david chay diaz" readonly>
+                            </p>
+                            <div class="row bottom-buffer">
+                                <div class="col-12 col-md-6">
+                                    <p class="card-text">
+                                        <label for="direccion">Dirección</label>
+                                        <textarea name="direccion" class="form-control input-hidden">24 Calle Pnte. Esq. con 12 privada sur s/n</textarea>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="card-text">
+                                        <label for="referencias">Referencias</label>
+                                        <textarea name="referencias" class="form-control input-hidden">Casa de color Azul, a dos cuadras de la escuela</textarea>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="card-text">
+                                <label for="colonia">Colonia</label>
+                                <input type="text" class="form-control input-hidden" name="colonia" value="Barrio San sebastian">
+                            </p>
+                            <p class="card-text">
+                                <label for="email">Correo Electronico</label>
+                                <input type="email" class="form-control input-hidden" name="email" value="davichay@gmail.com">
+                            </p>
+                            <div class="row bottom-buffer">
+                                <div class="col-12 col-md-6">
+                                    <p class="card-text">
+                                        <label for="telefono">Telefono</label>
+                                        <input type="tel" class="form-control input-hidden" name="telefono" value="62 8 50 30">
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="card-text">
+                                        <label for="celular">Celular</label>
+                                        <input type="tel" class="form-control input-hidden" name="celular" value="9621275592">
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <input type="submit" value="Guardar" class="btn btn-primary btn-lg">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
     <footer class="footer">
         <div class="container">
