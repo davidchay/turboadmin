@@ -15,11 +15,13 @@
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
-    <div id="app">
+
+    <div id="app" class="container">
+        <hello-word></hello-word>
+
+        <welcome-mesagge v-bind:name='name' v-bind:gender='gender'></welcome-mesagge>
         <form v-on:submit.prevent="signUp(true)">
             <div v-show="name">
-                <h1>{{gener == 'm'? 'Bienvenido' : 'Bienvenida' }}, {{name}}</h1>
                 <p>Espero disfrutes tu visita</p>
                 <p>Tu nombre al reves: {{ name.split('').reverse().join('') }}</p>
             </div>
@@ -30,17 +32,15 @@
             </p>
             <p v-else>Exelente</p>
             <label>
-              <input type="radio" name="genero" v-model="gener" value="m"> Male
+              <input type="radio" name="genero" v-model="gender" value="m"> Male
             </label>
             <br>
             <label for="">
-              <input type="radio" name="gener0" v-model="gener" value="f"> Female
+              <input type="radio" name="gener0" v-model="gender" value="f"> Female
             </label>
             <br>
-            <p>Años de experiencia e PHP {{expphp}} |
-                <button :class="{btn:true, 'btn-danger':expphp > 10}" v-on:click.prevent="chkphp(1) ">+</button>
-                <button class="btn btn-default" v-bind:disabled="expphp==0" v-on:click.prevent="chkphp(-1)">-</button></p>
-            <p>
+                <years-exp v-bind:years.sync='years_php' v-bind:tech='PHP'></years-exp>
+                <years-exp v-bind:years.sync='years_js' v-bind:tech='JS'></years-exp>
                 <button type="submit" class="btn btn-primary">Enviar</button>
                 <button type="submit" class="btn btn-primary" v-on:click.prevent="signUp(false)">enviar y Salir del sistema</button>
             </p>
@@ -54,14 +54,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="js/vue.js" charset="utf-8"></script>
-    <script src="js/app.js" charset="utf-8"></script>
+
+    <script type="text/template" id="welcome_template">
+      <h1>{{gender == 'm'? 'Bienvenido' : 'Bienvenida' }}, {{name}}</h1>
+    </script>
+    <script type="text/template" id="years_template">
+      <p>Años de experiencia  {{tech}} {{years}} |
+          <button :class="{btn:true, 'btn-danger':exp > 10}" v-on:click.prevent="chk(1) ">+</button>
+          <button class="btn btn-default" v-bind:disabled="exp==0" v-on:click.prevent="chk(-1)">-</button></p>
+      <p>
+    </script>
     <script>
+        Vue.component('hello-word',{
+          template:'<h1>Hello, world!</h1>',
+        });
+        Vue.component('welcome-mesagge',{
+          template:'#welcome_template',
+          props:{
+            gender:{type:String, required:false,default:'m'},
+            name:{type:String, required:true}
+          }
+        });
+        Vue.component('years-exp',{
+          template:'#years_template',
+          methods:{
+            chk: function(val) {
+                console.log(val);
+                this.years = this.years + val;
+                if (this.years < 0) {
+                    this.years = 0;
+                    return;
+                }
+                console.log(this.years);
+            }
+          },
+          props:['years','tech']
+        });
         new Vue({
             el: "#app",
             data: {
                 name: "",
-                gener: 'm',
-                expphp: 0
+                gender: 'm',
+                years_php: 0,
+                years_js:0,
             },
             methods: {
                 signUp: function(r) {
@@ -72,15 +107,7 @@
                         alert('Bye');
                     }
                 },
-                chkphp: function(val) {
-                    console.log(val);
-                    this.expphp = this.expphp + val;
-                    if (this.expphp < 0) {
-                        this.expphp = 0;
-                        return;
-                    }
-                    console.log(this.expphp);
-                }
+
             }
         });
     </script>
