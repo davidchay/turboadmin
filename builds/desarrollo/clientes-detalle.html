@@ -94,8 +94,6 @@
             <div class="col-12">
                 <h1 class="display-4">Información del Cliente</h1>
             </div>
-
-
         </div>
         <div class="row top-buffer">
             <div class="col-md-12">
@@ -109,58 +107,64 @@
                     <li class="nav-item ">
                         <a class="nav-link active" href="#">Detalle</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Datos-Técnicos</a>
+                    </li>
                 </ul>
                 <div class="card">
                     <div class="card-block">
                         <form action="">
                             <h2 class="card-title">Detalle</h2>
                             <div class="form-group row">
-                                <label for="nombre" class="col-2 col-form-label">Nombre</label>
-                              <div class="col-10">
-                                <input type="text" class="form-control  input-hidden" name="nombre" value="david chay diaz" readonly>
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="direccion" class="col-2 col-form-label">Dirección</label>
+                                <label for="nombre" class="col-2 col-form-label text-right">Nombre:</label>
                                 <div class="col-10">
-                                  <input type="text" name="direccion" class="form-control input-hidden" value="24 Calle Pnte. Esq. con 12 privada sur s/n">
+                                    <input type="text" class="form-control  input-hidden" name="nombre" value="david chay diaz" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="referencias" class="col-2 col-form-label">Referencias</label>
+                                <label for="direccion" class="col-2 col-form-label text-right">Dirección:</label>
                                 <div class="col-10">
-                                  <input type="text" name="referencias" class="form-control input-hidden" value="Casa  de color Azul, a dos cuadras de la escuela">
+                                    <input type="text" name="direccion" class="form-control input-hidden" value="24 Calle Pnte. Esq. con 12 privada sur s/n">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colonia" class="col-2 col-form-label">Colonia</label>
+                                <label for="referencias" class="col-2 col-form-label text-right">Referencias:</label>
                                 <div class="col-10">
-                                  <input type="text" class="form-control input-hidden" name="colonia" value="Barrio San sebastian">
+                                    <input type="text" name="referencias" class="form-control input-hidden" value="Casa  de color Azul, a dos cuadras de la escuela">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="email" class="col-2 col-form-label">Correo Electronico</label>
+                                <label for="colonia" class="col-2 col-form-label text-right">Colonia:</label>
                                 <div class="col-10">
-                                  <input type="email" class="form-control input-hidden" name="email" value="davichay@gmail.com">
+                                    <input type="text" class="form-control input-hidden" name="colonia" value="Barrio San sebastian">
                                 </div>
                             </div>
                             <div class="form-group row">
-                              <label for="telefono" class="col-2 col-form-label">Telefono</label>
-                              <div class="col-10">
-                                <input type="tel" class="form-control input-hidden" name="telefono" value="62 8 50 30">
-                              </div>
+                                <label for="email" class="col-2 col-form-label text-right">Correo Electronico:</label>
+                                <div class="col-10">
+                                    <input type="email" class="form-control input-hidden" name="email" value="davichay@gmail.com">
+                                </div>
                             </div>
                             <div class="form-group row">
-                              <label for="celular" class="col-2 col-form-label">Celular</label>
-                              <div class="col-10">
-                                <input type="tel" class="form-control input-hidden" name="celular" value="9621275592">
-                              </div>
+                                <label for="telefono" class="col-2 col-form-label text-right">Telefono:</label>
+                                <div class="col-10">
+                                    <input type="tel" class="form-control input-hidden" name="telefono" value="62 8 50 30">
+                                </div>
                             </div>
                             <div class="form-group row">
-                              <div class="col-sm-10 offset-sm-2">
-                                <button type="submit" class="btn btn-success"><i class="pe-7s-diskette"></i> Guardar</button>
-                                <button type="Button" class="btn btn-warning">Cancelar</button>
-                              </div>
+                                <label for="celular" class="col-2 col-form-label text-right">Celular:</label>
+                                <div class="col-10">
+                                    <input type="tel" class="form-control input-hidden" name="celular" value="9621275592">
+                                </div>
+                            </div>
+                            <div class="">
+                                <div id="button-edit" class="pull-right">
+                                    <button id="btn-edit" type="submit" class="btn btn-outline-primary btn-lg" data-toggle="tooltip" data-placement="top" title="Editar"><i class="pe-7s-pen pe-2x pe-va"></i></button>
+                                </div>
+                                <div id="buttons-save-cancel" class="pull-right">
+                                    <button id="btn-save" type="submit" class="btn btn-outline-success btn-lg" data-toggle="tooltip" data-placement="top" title="Guardar"><i class="pe-7s-diskette pe-2x pe-va"></i></button>
+                                    <button id="btn-cancel" type="reset" class="btn btn-outline-danger btn-lg" data-toggle="tooltip" data-placement="top" title="Cancelar"><i class="pe-7s-back pe-2x pe-va"></i></button>
+                                </div>
                             </div>
                         </form>
                     </div>

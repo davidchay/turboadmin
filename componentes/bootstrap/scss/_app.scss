@@ -1,9 +1,15 @@
 //buttons
-.btn:hover
+.btn.btn-link:active,
+.btn.btn-link:focus{
+  outline: none;
+}
+button:focus {outline:0;}
+button:hover
 {
   cursor:pointer;
 }
-//yablas
+
+//tablas
 .table
 {
     border:1px solid $border-color;
@@ -23,10 +29,11 @@
         color: lighten($brand-primary, 15%);
       }
       &.active{
-        color: $gray-dark;
+        color: $gray-light;
         border-bottom: none;
         &:hover{
-          color: $gray-dark;
+          color: $gray-light;
+          cursor:default;
         }
       }
       &.disabled{
@@ -170,24 +177,5 @@
         }
       }
     }
-  }
-
-}
-.table
-{
-  //border:1px solid $white;
-  th
-  {
-      //color:white;
-  }
-  tr
-  {
-    //background: $black;
-    //color:red;
-  }
-  &.table-hover
-  {
-    //background-color: #1e2b38;
-    //color:$black;
   }
 }

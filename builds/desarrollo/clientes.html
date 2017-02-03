@@ -132,7 +132,7 @@
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
-                            <td>Colonia</td>
+                            <th>ColoniaXXXx</th>
                             <th>Telefono</th>
                             <th width="160px">Operación</th>
                         </tr>
@@ -144,8 +144,8 @@
                             <td>{{cliente.colonia}}</td>
                             <td>{{cliente.telefono}}</td>
                             <td>
-                                <button type="button" class="btn btn-info " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-info pe-lg"></span></button>
-                                <button type="button" v-on:click.prevent="rm(cliente)" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash pe-lg"></span></button>
+                                <button type="button" class="btn btn-outline-info " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-info pe-lg"></span></button>
+                                <button type="button" v-on:click.prevent="rm(cliente)" class="btn btn-outline-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash pe-lg"></span></button>
                             </td>
                         </tr>
                     </tbody>
@@ -173,7 +173,6 @@
     </div>
     <footer class="footer">
         <div class="container">
-
             <div class="row top-buffer">
                 <div class="col-md-12">
                     <p class="text-muted text-center">

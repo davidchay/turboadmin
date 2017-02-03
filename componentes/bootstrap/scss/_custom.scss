@@ -167,7 +167,7 @@ $table-border-color:            $border-color;
 
 
 $btn-primary-color:              $white !default;
-$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             $btn-primary-bg !default;
 
 $btn-secondary-color:            $gray-dark !default;
@@ -212,10 +212,10 @@ $btn-transition:                 all .2s ease-in-out !default;
 // Forms
 
 
-$input-bg:                       $white !default;
+$input-bg:                       rgba($body-color,.1);//$white !default;
 $input-bg-disabled:              $gray-lighter !default;
 
-$input-color:                    $gray !default;
+$input-color:                    $gray-lighter;
 $input-border-color:             rgba($black,.15) !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
@@ -224,10 +224,10 @@ $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
 $input-border-radius-sm:         $border-radius-sm !default;
 
-$input-bg-focus:                 $input-bg !default;
-$input-border-focus:             lighten($brand-primary, 25%) !default;
+$input-bg-focus:                 lighten($input-bg,25%);
+$input-border-focus:             lighten($border-color,15%);
 $input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6) !default;
-$input-color-focus:              $input-color !default;
+$input-color-focus:              $body-color;
 
 $input-color-placeholder:        $gray-light !default;
 
@@ -410,7 +410,7 @@ $navbar-inverse-toggler-border:        rgba($white,.1) !default;
 $nav-item-margin:               .2rem !default;
 $nav-item-inline-spacer:        1rem !default;
 $nav-link-padding:              .5em 1em !default;
-$nav-link-hover-bg:             $gray-lighter !default;
+$nav-link-hover-bg:             $content-bg;
 $nav-disabled-link-color:       $gray-light !default;
 
 $nav-tabs-border-color:                       inherit;// #ddd !default;
@@ -418,8 +418,8 @@ $nav-tabs-border-width:                       $border-width !default;
 $nav-tabs-border-radius:                      $border-radius !default;
 $nav-tabs-link-hover-border-color:            $gray-lighter !default;
 $nav-tabs-active-link-hover-color:            $gray !default;
-$nav-tabs-active-link-hover-bg:               $body-bg !default;
-$nav-tabs-active-link-hover-border-color:     transparent;//#ddd !default;
+$nav-tabs-active-link-hover-bg:               $content-bg;
+$nav-tabs-active-link-hover-border-color:     $border-color;
 $nav-tabs-justified-link-border-color:        #ddd !default;
 $nav-tabs-justified-active-link-border-color: $body-bg !default;
 
@@ -438,22 +438,22 @@ $pagination-padding-x-lg:             1.5rem !default;
 $pagination-padding-y-lg:             .75rem !default;
 $pagination-line-height:              1.25 !default;
 
-$pagination-color:                     $link-color !default;
-$pagination-bg:                        $black;
-$pagination-border-width:              0;
-$pagination-border-color:              transparent;
+$pagination-color:                     $link-color;
+$pagination-bg:                        $body-bg;
+$pagination-border-width:              1px;
+$pagination-border-color:              $border-color;
 
-$pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $pagination-bg;
-$pagination-hover-border:              $border-color;
+$pagination-hover-color:               $link-hover-color;
+$pagination-hover-bg:                  $body-bg;
+$pagination-hover-border:              $pagination-border-color;
 
 $pagination-active-color:              $body-color;
-$pagination-active-bg:                 $body-bg;
+$pagination-active-bg:                 $pagination-bg;
 $pagination-active-border:             $border-color;
 
 $pagination-disabled-color:            darken($brand-primary,20%);
 $pagination-disabled-bg:               $body-bg;
-$pagination-disabled-border:           #ddd !default;
+$pagination-disabled-border:           darken($border-color,5%);
 
 
 // Jumbotron

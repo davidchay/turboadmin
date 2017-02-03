@@ -10,7 +10,6 @@ var gulp = require('gulp'),
 var path={
     bootstrap:{
       scss:'./componentes/bootstrap/scss/*.scss',
-
     },
     app: {
       scss:'./componentes/app/scss/*.scss',
@@ -19,6 +18,7 @@ var path={
     desarrollo:{
       css:'./builds/desarrollo/css',
       js:'./builds/desarrollo/js',
+    
     },
     produccion:{
       css:'./builds/produccion/css',
