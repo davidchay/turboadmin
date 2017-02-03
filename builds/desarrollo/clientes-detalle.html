@@ -103,59 +103,65 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Servicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Historial</a>
+                    <li class="nav-item ">
+                        <a class="nav-link disabled" href="#">Historial</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link active" href="#">Detalle</a>
                     </li>
                 </ul>
                 <div class="card">
                     <div class="card-block">
                         <form action="">
-                            <h2 class="card-title"></h2>
-                            <p class="card-text">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control input-hidden" name="nombre" value="david chay diaz" readonly>
-                            </p>
-                            <div class="row bottom-buffer">
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text">
-                                        <label for="direccion">Dirección</label>
-                                        <textarea name="direccion" class="form-control input-hidden">24 Calle Pnte. Esq. con 12 privada sur s/n</textarea>
-                                    </p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text">
-                                        <label for="referencias">Referencias</label>
-                                        <textarea name="referencias" class="form-control input-hidden">Casa de color Azul, a dos cuadras de la escuela</textarea>
-                                    </p>
+                            <h2 class="card-title">Detalle</h2>
+                            <div class="form-group row">
+                                <label for="nombre" class="col-2 col-form-label">Nombre</label>
+                              <div class="col-10">
+                                <input type="text" class="form-control  input-hidden" name="nombre" value="david chay diaz" readonly>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="direccion" class="col-2 col-form-label">Dirección</label>
+                                <div class="col-10">
+                                  <input type="text" name="direccion" class="form-control input-hidden" value="24 Calle Pnte. Esq. con 12 privada sur s/n">
                                 </div>
                             </div>
-                            <p class="card-text">
-                                <label for="colonia">Colonia</label>
-                                <input type="text" class="form-control input-hidden" name="colonia" value="Barrio San sebastian">
-                            </p>
-                            <p class="card-text">
-                                <label for="email">Correo Electronico</label>
-                                <input type="email" class="form-control input-hidden" name="email" value="davichay@gmail.com">
-                            </p>
-                            <div class="row bottom-buffer">
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text">
-                                        <label for="telefono">Telefono</label>
-                                        <input type="tel" class="form-control input-hidden" name="telefono" value="62 8 50 30">
-                                    </p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text">
-                                        <label for="celular">Celular</label>
-                                        <input type="tel" class="form-control input-hidden" name="celular" value="9621275592">
-                                    </p>
+                            <div class="form-group row">
+                                <label for="referencias" class="col-2 col-form-label">Referencias</label>
+                                <div class="col-10">
+                                  <input type="text" name="referencias" class="form-control input-hidden" value="Casa  de color Azul, a dos cuadras de la escuela">
                                 </div>
                             </div>
-                            <hr>
-                            <input type="submit" value="Guardar" class="btn btn-primary btn-lg">
+                            <div class="form-group row">
+                                <label for="colonia" class="col-2 col-form-label">Colonia</label>
+                                <div class="col-10">
+                                  <input type="text" class="form-control input-hidden" name="colonia" value="Barrio San sebastian">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-2 col-form-label">Correo Electronico</label>
+                                <div class="col-10">
+                                  <input type="email" class="form-control input-hidden" name="email" value="davichay@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="telefono" class="col-2 col-form-label">Telefono</label>
+                              <div class="col-10">
+                                <input type="tel" class="form-control input-hidden" name="telefono" value="62 8 50 30">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="celular" class="col-2 col-form-label">Celular</label>
+                              <div class="col-10">
+                                <input type="tel" class="form-control input-hidden" name="celular" value="9621275592">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-success"><i class="pe-7s-diskette"></i> Guardar</button>
+                                <button type="Button" class="btn btn-warning">Cancelar</button>
+                              </div>
+                            </div>
                         </form>
                     </div>
                 </div>

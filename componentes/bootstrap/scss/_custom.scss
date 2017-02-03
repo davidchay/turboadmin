@@ -26,7 +26,7 @@
 // Dropdowns
 // Z-index master list
 // Navbar
-// Navs
+//
 // Pagination
 // Jumbotron
 // Form states and alerts
@@ -63,8 +63,8 @@ $red:    #e74c3c;
 $orange: #e67e22;
 $yellow: #f1c40f;
 $green:  #2ecc71;
-$blue:   #3498db;
-$teal:   #1abc9c;
+$blue:    #34b4db;// #3498db;
+$teal:   #77D065;
 $pink:   #DB0A5B;
 $purple: #9b59b6;
 
@@ -76,7 +76,7 @@ $gray-lighter:              #edeff0;
 $gray-lightest:             #f4f5f6;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue;
+$brand-primary:             #34b4db;//$blue;
 $brand-success:             $green;
 $brand-info:                $teal;
 $brand-warning:             $orange;
@@ -84,21 +84,24 @@ $brand-danger:              $red;
 $brand-inverse:             $gray-dark;
 
 
+//border code-color
+$border-color: darken($brand-primary,25%);
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded:            false;
-
+$enable-rounded:            true;
+$content-bg:                lighten($black,5%);
 // Body
 //
 // Settings for the `<body>` element.
 
 //$body-bg:       $white !default;
-$body-bg:       $black;//$gray-light;
-$body-color:    $gray-dark;
-$inverse-bg:    $black;
-$inverse-color: $gray-lighter;
+$body-bg:       $black;
+$body-color:    $gray-lighter;
+$inverse-bg:    $gray-light;
+$inverse-color: $black;
 
 
 // Links
@@ -107,8 +110,9 @@ $inverse-color: $gray-lighter;
 
 $link-color:            $brand-primary;
 $link-decoration:       none;
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      lighten($link-color, 15%);
 $link-hover-decoration: none;
+$link-disabled:         darken($link-color, 15%);
 
 
 // Fonts
@@ -123,9 +127,9 @@ $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $headings-font-family:   $font-family-serif;
 $headings-font-weight:   700;
 $headings-line-height:   1.2;
-$headings-color:         $gray-dark;
+$headings-color:         $gray;
 
-$text-muted: darken($gray-light,15%);
+$text-muted: lighten($body-bg,25%);
 
 $abbr-border-color: darken($gray-light,15%);
 
@@ -141,20 +145,20 @@ $blockquote-border-color: darken($gray-light,15%);
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 
-$table-bg:                      $gray-light;//$white;
+$table-bg:                      $content-bg;
 
 $table-inverse-bg:              $black;
 $table-inverse-color:           $white;
 
-$table-bg-accent:               rgba($black,.05) !default;
-$table-bg-hover:                $gray-lightest;//rgba($black,.075) !default;
+$table-bg-accent:               rgba($black,.05);
+$table-bg-hover:                darken($black,5%);
 $table-bg-active:               $table-bg-hover;
 
-$table-head-bg:                 $gray-light;
+$table-head-bg:                 darken($black,25%);
 $table-head-color:              $gray-light;
 
 $table-border-width:            $border-width;
-$table-border-color:            $gray-light;
+$table-border-color:            $border-color;
 
 
 // Buttons
@@ -381,7 +385,7 @@ $dropdown-header-color:          $gray-light !default;
 // of components dependent on the z-axis and are designed to all work together.
 
 $zindex-dropdown-backdrop:  990 !default;
-$zindex-navbar:             1000 !default;
+$zindex-bar:             1000 !default;
 $zindex-dropdown:           1000 !default;
 $zindex-fixed:              1030 !default;
 $zindex-sticky:             1030 !default;
@@ -391,10 +395,10 @@ $zindex-popover:            1060 !default;
 $zindex-tooltip:            1070 !default;
 
 
-// Navbar
+// bar
 
-$navbar-inverse-color:                 rgba($white,.5) !default;
-$navbar-inverse-hover-color:           rgba($white,.75) !default;
+$bar-inverse-color:                 rgba($white,.5) !default;
+$bar-inverse-hover-color:           rgba($white,.75) !default;
 $navbar-inverse-active-color:          rgba($white,1) !default;
 $navbar-inverse-disabled-color:        rgba($white,.25) !default;
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
@@ -409,13 +413,13 @@ $nav-link-padding:              .5em 1em !default;
 $nav-link-hover-bg:             $gray-lighter !default;
 $nav-disabled-link-color:       $gray-light !default;
 
-$nav-tabs-border-color:                       #ddd !default;
+$nav-tabs-border-color:                       inherit;// #ddd !default;
 $nav-tabs-border-width:                       $border-width !default;
 $nav-tabs-border-radius:                      $border-radius !default;
 $nav-tabs-link-hover-border-color:            $gray-lighter !default;
 $nav-tabs-active-link-hover-color:            $gray !default;
 $nav-tabs-active-link-hover-bg:               $body-bg !default;
-$nav-tabs-active-link-hover-border-color:     #ddd !default;
+$nav-tabs-active-link-hover-border-color:     transparent;//#ddd !default;
 $nav-tabs-justified-link-border-color:        #ddd !default;
 $nav-tabs-justified-active-link-border-color: $body-bg !default;
 
@@ -435,27 +439,27 @@ $pagination-padding-y-lg:             .75rem !default;
 $pagination-line-height:              1.25 !default;
 
 $pagination-color:                     $link-color !default;
-$pagination-bg:                        $white !default;
-$pagination-border-width:              $border-width !default;
-$pagination-border-color:              #ddd !default;
+$pagination-bg:                        $black;
+$pagination-border-width:              0;
+$pagination-border-color:              transparent;
 
 $pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $gray-lighter !default;
-$pagination-hover-border:              #ddd !default;
+$pagination-hover-bg:                  $pagination-bg;
+$pagination-hover-border:              $border-color;
 
-$pagination-active-color:              $white !default;
-$pagination-active-bg:                 $brand-primary !default;
-$pagination-active-border:             $brand-primary !default;
+$pagination-active-color:              $body-color;
+$pagination-active-bg:                 $body-bg;
+$pagination-active-border:             $border-color;
 
-$pagination-disabled-color:            $gray-light !default;
-$pagination-disabled-bg:               $white !default;
+$pagination-disabled-color:            darken($brand-primary,20%);
+$pagination-disabled-bg:               $body-bg;
 $pagination-disabled-border:           #ddd !default;
 
 
 // Jumbotron
 
 $jumbotron-padding:              2rem !default;
-$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   $content-bg;
 
 
 // Form states and alerts
@@ -489,7 +493,7 @@ $card-border-radius:       $border-radius !default;
 $card-border-color:        rgba($black,.125) !default;
 $card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:              $gray-lightest !default;
-$card-bg:                  $white !default;
+$card-bg:                  $jumbotron-bg;
 
 $card-link-hover-color:    $white !default;
 

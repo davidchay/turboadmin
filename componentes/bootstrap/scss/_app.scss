@@ -1,6 +1,42 @@
+//buttons
 .btn:hover
 {
   cursor:pointer;
+}
+//yablas
+.table
+{
+    border:1px solid $border-color;
+}
+//jumbotron
+.jumbotron, .card
+{
+  border:1px solid $border-color;
+}
+
+//navs
+.nav-tabs{
+  .nav-item{
+    .nav-link{
+      //color:red;
+      &:hover{
+        color: lighten($brand-primary, 15%);
+      }
+      &.active{
+        color: $gray-dark;
+        border-bottom: none;
+        &:hover{
+          color: $gray-dark;
+        }
+      }
+      &.disabled{
+        color: darken($brand-primary, 20%);
+        &:hover{
+          color: darken($brand-primary, 20%);
+        }
+      }
+    }
+  }
 }
 #header-container
 {
@@ -70,8 +106,8 @@
   {
     &.navbar
     {
-      padding-top:0.2rem;
-      padding-bottom: 0.2rem;
+      padding-top:0.1rem;
+      padding-bottom: 0.1rem;
 
       .nav-item
       {
