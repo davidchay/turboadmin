@@ -11,24 +11,21 @@ var path={
     bootstrap:{
       scss:'./componentes/bootstrap/scss/*.scss',
     },
-    app: {
-      scss:'./componentes/app/scss/*.scss',
-      js:'./componentes/app/js/*.js'
-    },
+
     desarrollo:{
-      css:'./builds/desarrollo/css',
-      js:'./builds/desarrollo/js',
-    
+      css:'./builds/desarrollo/assets/css',
+      js:'./builds/desarrollo/assets/js',
+
     },
     produccion:{
-      css:'./builds/produccion/css',
-      js:'./builds/produccion/js'
+      css:'./builds/produccion/assets/css',
+      js:'./builds/produccion/assets/js'
     }
 };
 
 gulp.task('sass', function(){
-  gulp.src([path.bootstrap.scss,path.app.scss])
-  .pipe(sass())
+  gulp.src(path.bootstrap.scss)
+  .pipe(sass({outputStyle:'expanded'}))
   .on('error',gutil.log)
   .pipe(autoprefixer({
     versions:['last 2']
@@ -60,8 +57,8 @@ gulp.task('connect',function(){
 });
 
 gulp.task('watch',function(){
-  gulp.watch([path.bootstrap.scss,path.app.scss],['sass']);
-  gulp.watch(path.app.js,['js']);
+  gulp.watch([path.bootstrap.scss],['sass']);
+  //gulp.watch(path.app.js,['js']);
 });
 
-gulp.task('default',['js','sass','connect','watch']);
+gulp.task('default',['sass','connect','watch']);

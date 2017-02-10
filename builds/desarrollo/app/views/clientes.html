@@ -1,0 +1,82 @@
+
+
+        <section class="row top-buffer">
+            <div class="col-8">
+                <h1 class="display-4">Clientes</h1>
+            </div>
+            <div class="col-4">
+                <ul class="nav pull-right">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tooltip" data-placement="top" title="Clientes Estrella" href="#">
+                            <i class="pe-7s-star pe-2x pe-va"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Falta por pagar" href="#">
+                            <i class="pe-7s-cash pe-2x pe-va"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Vista en tabla" href="#">
+                            <i class="pe-7s-menu pe-2x pe-va"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Vista en cards" href="#">
+                            <i class="pe-7s-id pe-2x pe-va"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="pe-7s-date pe-2x pe-va"></i>
+                            <sup>2</sup>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-12">
+                <table class="table table-hover ">
+                    <thead class="">
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>ColoniaXXXx</th>
+                            <th>Telefono</th>
+                            <th width="160px">Operación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(cliente, index=20) in clientes">
+                            <th scope="row">{{index+1}}</th>
+                            <td>{{cliente.nombre}}</td>
+                            <td>{{cliente.colonia}}</td>
+                            <td>{{cliente.telefono}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-info " data-toggle="tooltip" data-placement="top" title="Editar información"><span class="pe-7s-info pe-lg"></span></button>
+                                <button type="button" v-on:click.prevent="rm(cliente)" class="btn btn-outline-danger " data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="pe-7s-trash pe-lg"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- ./row -->
+        <div class="row">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>

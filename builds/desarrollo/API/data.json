@@ -1,0 +1,18 @@
+{
+  "usuario":{
+    "userName":"Davi",
+    "nombre":"David Chay",
+    "perfil":"Administrador",
+
+    "menu":{
+      "inicio":"/",
+      "clientes":{
+        "clientes":"/clientes/",
+        "Nuevo cliente":"/cliente-nuevo/"
+      },
+      "servicios":"/servicios/"
+    }
+
+
+  }
+}
