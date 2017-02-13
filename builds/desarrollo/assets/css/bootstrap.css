@@ -3709,7 +3709,7 @@ tbody.collapse.show {
 }
 
 .nav-link.disabled {
-  color: #636c72;
+  color: #f4f5f6;
   cursor: not-allowed;
 }
 
@@ -3732,7 +3732,7 @@ tbody.collapse.show {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #636c72;
+  color: #f4f5f6;
   background-color: transparent;
   border-color: transparent;
 }
@@ -9014,12 +9014,28 @@ button:hover {
 }
 
 #header-container #menu-principal.navbar .nav .nav-item a {
-  color: #7f8c8d;
+  color: #edeff0;
   font-weight: 500;
 }
 
 #header-container #menu-principal.navbar .nav .nav-item a:hover {
   color: #34b4db;
+}
+
+#header-container #menu-principal.navbar .nav .nav-item.dropdown .nav-link {
+  text-align: right;
+  position: relative;
+}
+
+#header-container #menu-principal.navbar .nav .nav-item.dropdown .nav-link small {
+  position: absolute;
+  display: block;
+  left: 0;
+}
+
+#header-container #menu-principal.navbar .nav .nav-item.dropdown .dropdown-menu .dropdown-item {
+  color: #2c3e50;
+  font-weight: normal;
 }
 
 #header-container #menu-secundario.navbar {

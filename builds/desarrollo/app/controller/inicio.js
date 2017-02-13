@@ -5,20 +5,29 @@ angular.module('turboAdmin')
 .controller("inicio",function($scope,$http)
 {
   var menu=[
-    { opcion:'dashboard',state:'inicio.dashboard' },
+    { opcion:'Dashboard',state:'inicio.dashboard' },
     { opcion:'Clientes',state:'inicio.clientes' },
     { opcion:'Servicios',state:'inicio.servicios' },
-
   ];
-    // 'dashboard':'/',
-    // 'clientes':'/clientes/',
-    // 'servicios':'/servicios/',
+  var subMenu=[
+    {Dashboard:''},
+    {Clientes:[
+      {opcion:'Clientes', state:'inicio.clientes.list'},
+      {opcion:'Nuevo Cliente', state:'inicio.clientes.nuevo'}
+      ]
+    },
+    {Servicios:[
+      {opcion:'Servicios', state:'inicio.servicios.list'},
+      {opcion:'Agregar servicio', state:'inicio.servicios.nuevo'}
+    ]}
+  ];
+
 
   $scope.usuario = {
     ID:'12345',
     userName:'Davi',
     nombre:'David Chay',
-    IDPerfil:'1',
+    IDPerfil:0,
     perfil:'Administrador',
     menu:menu
 
