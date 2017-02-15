@@ -94,6 +94,10 @@ angular
           }
         }
       })
+      .state('dashboard.clientes',{
+        templateUrl:'views/clientes/listaClientes.html',
+        url:'/clientes'
+    })
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
