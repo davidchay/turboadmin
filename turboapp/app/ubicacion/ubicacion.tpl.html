@@ -1,0 +1,81 @@
+<title-page></title-page>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+	  			<div class="panel-heading">
+	  				<i class="mdi mdi-map-marker-plus"></i> Nueva ubicación
+	  			</div>
+	  			<div class="panel-body">
+	    			<form name="addUbicacionForm">
+	    				<div class="form-group">
+					    	<label for="nombre-ubicacion">Nombre de la nueva ubicación</label>
+					    	<input type="text" ng-model="n.nombre" class="form-control" placeholder="Ingresa un nombre *" name="nombre-ubicacion" id="nombre-ubicacion" tabindex="1" focus required>
+						</div>
+						<div class="form-group">
+					    	<label for="descripcion-ubicacion">Descripción</label>
+					    	<div class="input-group">
+					    		<div class="input-group-addon"><i class="mdi mdi-content-paste mdi-36px"></i></div>
+					      
+					    		<textarea ng-model="n.descripcion" class="form-control" placeholder="Descripcion de la ubicación" name="descripcion-ubicacion" id="descripcion-ubicacion" tabindex="2"></textarea>
+					    	</div>
+						</div>
+						<hr>
+						<button type="button" ng-disabled="addUbicacionForm.$invalid" class="pull-right btn btn-primary" ng-click="addUbicacion(n)" tabindex="3">
+							<i class="mdi mdi-plus"></i> Agregar
+						</button>		
+	    			</form>
+	  			</div>
+			</div><!-- ./panel -->
+		</div><!-- ./col-md-6 -->
+		<div class="col-md-6">
+			<div class="panel panel-default">
+	  			<div class="panel-heading">
+	  				<i class="mdi mdi-map-marker-multiple"></i> Ubicaciones
+	  			</div>
+	  			<div class="panel-body">
+	    			<ul class="list-group">
+					  <li class="elem-ubicacion list-group-item"  ng-repeat="ubicacion in ubicaciones">
+					    <div class="options pull-right" >
+					    	<a class="btn btn-sm btn-primary " tooltip="Editar" ng-click="editar({id_ubicacion:ubicacion.id_ubicacion,nombre:ubicacion.nombre,descripcion:ubicacion.descripcion},$index)">
+					    		<i class="mdi mdi-pencil"></i>
+					    	</a>
+					    	<a class="btn btn-sm btn-warning" tooltip="Eliminar" sweetalert sweet-options="{{deleteUbicacion.option}}" sweet-confirm-option="{{deleteUbicacion.confirm}}" sweet-cancel-option="{{deleteUbicacion.cancel}}"  name="login-submit" sweet-on-cancel="cancelUbi()" sweet-on-confirm="delUbiConfirm($index)"  class="btn" ><i class="mdi mdi-close"></i></a>
+					    </div>	
+					    <h4 class="list-group-item-heading">{{ubicacion.nombre}}</h4>
+					    <p class="list-group-item-text">{{ubicacion.descripcion}}</p>
+					    
+					  </li>
+					  
+					</ul>
+	  			</div>
+			</div><!-- panel -->
+		</div><!-- ./col-md-6 -->
+	</div>	<!-- ./row -->
+</div><!-- ./container-fluid -->
+
+<script type="text/ng-template" id="editUbicacion.html">
+        <div class="modal-header">
+            <h4 class="modal-title">Editar ubicación</h4>
+        </div>
+        <div class="modal-body">
+            <form name="editUbicacionForm">
+            	<fieldset>
+	    				<div class="form-group">
+					    	<label for="nombre-ubicacion">Nombre de la ubicación</label>
+					    	<input type="text" ng-model="u.nombre" class="form-control" placeholder="Nombre *" name="nom-ubicacion" id="nom-ubicacion" tabindex="1" focus required>
+						</div>
+						<div class="form-group">
+					    	<label for="descripcion-ubicacion">Descripción</label>
+					    	<textarea ng-model="u.descripcion" class="form-control" placeholder="Descripcion" name="desc-ubicacion" id="desc-ubicacion" tabindex="2"></textarea>
+						</div>
+						
+				</fieldset>		
+	    	</form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-disabled="editUbicacionForm.$invalid"  ng-click="ok()" tabindex="3">Guardar cambios</button>
+            <button class="btn btn-warning" ng-click="cancel()" tabindex="4">Cancelar</button>
+        </div>
+    </script>

@@ -1,0 +1,80 @@
+<div class="col-sm-3 col-md-2 sidebar">
+    <button id="sidebar-hide" type="button" class=" sidebar-hide">
+        <i class="mdi mdi-window-close"></i>
+    </button>
+    <p class="brandy-logo">
+        Turbo<span>Admin</span>
+    </p>  
+
+    <div class="sidebar-nav">
+        <ul class="nav nav-sidebar " id="side-menu"">
+            <li ui-sref-active="active">
+                <a ui-sref="inicio.dashboard" ng-click="check(0)">
+                    <i class="mdi mdi-view-dashboard"></i> Dashboard
+                </a>
+            </li>
+            
+            <li class="ng-class:{on: collapseVar==1}">
+                <a href ng-click="check(1)">
+                  <i class="mdi mdi-briefcase"></i> Clientes<span
+                        class="chevron"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                    <li ui-sref-active="active">
+                       <a ui-sref="inicio.clientes">Lista de clientes</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="inicio.clienteNuevo">Agregar cliente</a>
+                    </li>
+                </ul>
+                 <!-- /.nav-second-level -->
+            </li>
+            <li ng-class="{on: collapseVar==2}">
+                <a href ng-click="check(2)">
+                    <i class="mdi mdi-home"></i> Servicios<span class="chevron"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=2">
+                    <li>
+                        <a href="#">Todos los servicios</a>
+                    </li>
+                    <li>
+                        <a href="#">Agregar servicio</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li ng-class="{on: collapseVar==3}">
+                <a ng-click="check(3)">
+                    <i class="mdi mdi-basket"></i> Inventario<span class="chevron"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=3">
+                    <li ui-sref-active="active">
+                        <a ui-sref="inicio.routers"><i class="mdi mdi-router-wireless"></i> Routers</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="inicio.antenas.lista"><i class="mdi mdi-access-point"></i> Antenas</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="inicio.ubicacion" ng-click="check(4)">
+                    <i class="mdi mdi-map-marker"></i> Ubicación
+                </a>
+            </li>
+            <li ng-class="{on: collapseVar==4}">
+                <a href="#" ng-click="check(5)"><i class="mdi mdi-home"></i> Personal<span class="chevron"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=3">
+                    <li>
+                        <a href="">Todo el personal</a>
+                    </li>
+                    <li>
+                        <a href="">Agregar trabajador</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+        </ul>
+    </div><!-- ./sidebar-nav -->
+</div>

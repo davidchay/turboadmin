@@ -13,6 +13,8 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
+    'toaster',
+    'ngAnimate',
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
 
@@ -21,11 +23,12 @@ angular
       events:true,
     });
 
-    $urlRouterProvider.otherwise('/dashboard/home');
+    $urlRouterProvider.otherwise('home/');
 
     $stateProvider
       .state('dashboard', {
-        url:'/dashboard',
+        url:'/',
+        abstract:true,
         templateUrl: 'views/dashboard/main.html',
         controller:'MainCtrl',
         resolve: {
@@ -76,8 +79,8 @@ angular
         }
     })
       .state('dashboard.home',{
-        url:'/home',
-        controller: 'MainCtrl',
+        url:'home/',
+        controller: 'homeCtrl',
         templateUrl:'views/dashboard/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
@@ -88,7 +91,7 @@ angular
               'scripts/directives/timeline/timeline.js',
               'scripts/directives/notifications/notifications.js',
               'scripts/directives/chat/chat.js',
-              'scripts/directives/dashboard/stats/stats.js'
+              //'scripts/directives/dashboard/stats/stats.js'
               ]
             })
           }
@@ -96,8 +99,39 @@ angular
       })
       .state('dashboard.clientes',{
         templateUrl:'views/clientes/listaClientes.html',
-        url:'/clientes'
-    })
+        url:'clientes/',
+        controller:'ClientesCtrl',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'turboAdmin',
+              files:[
+              'scripts/controllers/clientes.js',
+              'scripts/directives/notifications/notifications.js',
+              'scripts/factory/data/data.js',
+              ]
+            })
+          }
+        }
+      })
+      .state('dashboard.clientenuevo',{
+        templateUrl:'views/clientes/nuevoCliente.html',
+        url:'cliente/nuevo/',
+        controller:'cnuevoCtrl',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'turboAdmin',
+              files:[
+              'scripts/controllers/clientes.js',
+              //'scripts/directives/notifications/notifications.js',
+              'scripts/directives/datepicker/datepicker.js',
+              'scripts/factory/data/data.js',
+              ]
+            })
+          }
+        }
+      })
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
@@ -158,4 +192,6 @@ angular
        templateUrl:'views/ui-elements/grid.html',
        url:'/grid'
    })
+
+
   }]);

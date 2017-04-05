@@ -1,0 +1,289 @@
+.nopadding {
+   padding: 0 ;
+}
+
+
+
+//Navbar
+.navbar{
+    border:none;
+    border-bottom:1px solid @gray-lighter;
+  .navbar-nav{
+    margin:20px 0;
+  }
+  .navbar-form{
+    padding-top: ((@navbar-height - @line-height-computed) / 2);
+    padding-bottom: ((@navbar-height - @line-height-computed) / 2);
+    .form-group{
+      .form-control{
+        padding:0px;
+        margin:0px;
+        border-radius:0;
+        border:none;
+        box-shadow: none;
+        border-bottom: 1px solid @gray-lighter;
+      }
+    }
+  }
+  .navbar-text.navbar-title{
+      font-weight: 300;
+      font-size:2.5em;
+      font-family:'Roboto Condensed', sans-serif;
+  }
+  .navbar-nav{
+    .dropdown{
+      >a{
+        position:relative;
+        margin-left:40px;
+        &:active,
+        &:focus{
+          background: inherit;
+        }
+        span.firstletter {
+          font-family:'Roboto Condensed', sans-serif;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          padding: 6px 0;
+          font-size: 2rem;
+          font-weight:300;
+          color:white;
+          line-height: 1.4;
+          border-radius: 50px;
+          background:@brand-primary;
+          position:absolute;
+          left:-2em;
+          top:10px;
+        }
+        &:hover > span.firstletter,
+        &:focus > span.firstletter {
+          background: lighten(@brand-primary, 10%);
+          
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+
+.sidebar{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #2F4858;
+  border-right: 1px solid #415867;
+  color:white;
+
+  
+  .sidebar-hide {
+      display: inline-block;
+      font-size: 1.5em;
+      position:absolute;
+      right:-33px; 
+      top:0;
+      background-color:#273B49;
+      border:none; 
+      outline: 0;
+      z-index:1000;
+    }
+
+
+  .brandy-logo
+  {
+    font-size:2em;
+    text-transform: lowercase;
+    font-family: 'Roboto', sans-serif;
+    
+    span{
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 300;
+      text-transform: lowercase;
+      position: relative;
+    }
+
+  } // brandy-logo
+
+
+  .nav li a:focus{
+      background-color: transparent;
+  }
+  /* Sidebar navigation */
+  .nav-sidebar {
+    margin-right: -21px; 
+    margin-bottom: 20px;
+    margin-left: -20px;
+    li {
+      border-bottom: 1px solid #415867;
+      a {
+          padding-right: 20px;
+          padding-left: 20px;
+          color:#fff;
+          position: relative;
+          &:hover{
+            background-color: #415867;
+          }
+          
+      }
+      &.on > a,
+      &.on > a:hover,
+      &.on > a:focus,
+      &.on > a:active{
+        color:#fff;
+        background-color: #415867;
+        .chevron{
+          border: none;
+          top:40%;
+          border-top: 5px solid #fff;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;   
+        }
+      }
+        
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus,
+      &.active > a:active{
+        color: #fff;
+        background-color: @brand-primary;
+      }
+       
+
+    }
+  }//navbar sidebar
+  .chevron {
+     right:1em;
+     top:35%;
+     position:absolute;
+     width: 0; 
+     height: 0; 
+     border-right: 5px solid #fff;
+     border-top: 5px solid transparent;
+     border-bottom: 5px solid transparent; 
+  }  
+  .nav-second-level li,
+  .nav-third-level li {
+      border-bottom: none !important;
+  }
+
+  .nav-second-level li a {
+      padding-left: 37px;
+  }
+
+  .nav-third-level li a {
+      padding-left: 52px;
+  }
+
+}// sidebar
+
+
+
+
+
+.menu-button{
+  position: relative;
+  float: left;
+  margin-right: @navbar-padding-horizontal;
+  padding: 9px 10px;
+  .navbar-vertical-align(34px);
+  background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  border-radius: @border-radius-base;
+  &:hover, 
+  &:focus{
+    Outline:none;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 1px;
+    border-radius: 1px;
+    background:@gray;
+    margin:0 auto;
+    
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 6px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-button{
+    display: none;
+  }
+  .sidebar {
+     /* Scrollable contents if viewport is shorter than content. */
+    display: block;
+  }
+  #sidebar-hide,
+  .sidebar-hide{
+    display:none;
+  }
+
+  
+}//min-width
+
+
+
+/*
+ * Main content
+ */
+
+.main {
+  //padding: 20px;
+
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.elem-ubicacion{
+    
+  .options{
+    //display:none;
+     visibility: hidden;
+    animation: fadeOutLeft 1s;
+  }
+  &:hover > .options{
+    //display:block;
+     visibility: visible;
+    animation: fadeInLeft 1s;
+  }
+}
+

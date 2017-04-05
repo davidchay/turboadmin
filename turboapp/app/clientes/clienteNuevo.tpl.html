@@ -1,0 +1,103 @@
+<title-page></title-page>
+
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-md-12">
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	                Introduca los datos del cliente nuevo
+	            </div>
+	            <div class="panel-body">
+	            <form action="" name="nvoCltForm">
+	                <div class="form-group">
+					    <label for="nombre">Nombre</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-account mdi-24px"></i></div>
+					      <input type="text" ng-model="cliente.nombre"class="form-control" placeholder="Nombre completo" name="nombre" id="nombre" required>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="direccion">Dirección</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-account-location mdi-24px"></i></div>
+					      <textarea class="form-control" ng-model="cliente.direccion" placeholder="Dirección" name="direccion" id="direccion" required></textarea>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="direccion">Referencias</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-home-variant mdi-24px"></i></div>
+					      <textarea class="form-control" ng-model="cliente.referencias" placeholder="Referencias del domicilio" name="referencias" id="referancias" required></textarea>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="colonia">Colonia</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-nature-people mdi-24px"></i></div>
+					      <input type="text" ng-model="cliente.colonia" class="form-control"  placeholder="Colonia o fraccionamiento" name="colonia" id="colonia" required>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="tel">Teléfono</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-phone-classic mdi-24px"></i></div>
+					      <input type="text" ng-model="cliente.telefono" class="form-control"  placeholder="Teléfono fijo" name="tel" id="tel">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="cel">Celular</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-cellphone mdi-24px"></i></div>
+					      <input type="text" ng-model="cliente.celular" class="form-control"  placeholder="Teléfono movil" name="cel" id="cel" required>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="email">Email</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-mail-ru mdi-24px"></i></div>
+					      <input type="text" ng-model="cliente.email" class="form-control"  placeholder="Correo electronico" name="email" id="email">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="categoria">Categoria</label>
+					    <div class="input-group">
+					      	<div class="input-group-addon"><i class="mdi mdi-tag-multiple mdi-24px"></i></div>
+					      	<select ng-model="categoria" ng-change="chgCat(categoria.nombre)" ng-options="cate.nombre for cate in categorias" class="form-control" name="categoria" id="categoria" required>
+							</select>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="ubicacion">Ubicación</label>
+					    <div class="input-group">
+					      	<div class="input-group-addon"><i class="mdi mdi-map-marker mdi-24px"></i></div>
+					      	<select ng-model="ubicacion"  ng-change="changeUbi(ubicacion.id_ubicacion);" ng-options="ubi.nombre for ubi in ubicaciones"  class="form-control" name="ubicacion" id="ubicacion" required></select>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="fecha_alta">Fecha de afilición</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-calendar mdi-24px"></i></div>
+					      
+					      <input type="text" class="form-control" datepicker-popup="dd-MM-yyyy" ng-model="fecha_alta" is-open="opened" datepicker-options="dateOptions"  ng-required="true" readonly ng-focus="open($event)" ng-click="open($event)" show-weeks="false"
+	    					show-button-bar="false" name="fecha_alta" id="fecha_alta"/>
+	    					<span id="helpBlock" class="help-block">{{fecha_alta |  date:'fullDate' }}.</span>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="observaciones">Observaciones</label>
+					    <div class="input-group">
+					      <div class="input-group-addon"><i class="mdi mdi-clipboard-outline mdi-24px"></i></div>
+					      <textarea class="form-control" ng-model="cliente.observaciones" placeholder="Anota las observaciones o comentarios sobre el cliente" name="observaciones" id="observaciones"></textarea>
+					    </div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-lg" ng-disabled="nvoCltForm.$invalid" ng-click="guardar()"><i class="mdi mdi-content-save"></i> Guardar datos</button>
+                      <button type="button" ng-click="resetForm()" class="pull-right btn btn-warning btn-outline"><i class="mdi mdi-replay"></i> Resetear datos</button>
+					</form>
+	            </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>	
+</div>

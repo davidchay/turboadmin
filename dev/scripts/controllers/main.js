@@ -14,3 +14,9 @@ angular.module('turboAdmin')
      perfil:'admin',
     };
   });
+
+
+angular.module('turboAdmin')
+  .controller('homeCtrl', function($scope) {
+    console.log("dashboard ");
+  });

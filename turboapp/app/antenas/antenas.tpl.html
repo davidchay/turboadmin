@@ -1,0 +1,23 @@
+<title-page></title-page>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+			<ul class="nav nav-pills">
+			  <li ui-sref-active="active"><a ui-sref="inicio.antenas.lista"><i class="mdi mdi-view-list -mdi-24px"></i> Antenas</a></li>
+			  <li ui-sref-active="active"><a ui-sref="inicio.antenas.nuevo"><i class="mdi mdi-plus -mdi-24px"></i> Agregar</a></li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<form class="form-inline pull-right">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Buscar" style="margin-bottom: 0; ">
+		        </div>
+		          <button type="button" class="btn btn-default btn-circle"><i class="mdi mdi-magnify"></i></button>
+		      </form>
+		</div>
+	</div>
+	<hr>
+	<div ui-view></div>
+	
+</div>

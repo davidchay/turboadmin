@@ -1,0 +1,30 @@
+{
+  "name": "angular-sweetalert2",
+  "version": "0.0.3",
+  "description": "AngularJS wrapper for SweetAlert2",
+  "main": "SweetAlert2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshtate04/ngSweetAlert2.git"
+  },
+  "keywords": [
+    "angular",
+    "AngularJs",
+    "sweetalert",
+    "sweet",
+    "alert"
+  ],
+  "author": "joshtate04@me.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshtate04/ngSweetAlert2/issues"
+  },
+  "dependencies": {
+    "angular": "^1.3.14",
+    "sweetalert2": "^0.3.4"
+  },
+  "homepage": "https://github.com/joshtate04/ngSweetAlert2#readme"
+}
